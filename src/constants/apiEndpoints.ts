@@ -20,3 +20,9 @@ export const GET_ALL_CONTENT_TYPES = {
     url: 'contentTypes',
     method: 'GET'
 };
+
+export const GET_ALL_CONTENTS_FOR_CONTENT_TYPE = (id:string) =>({
+    url: `contentStorage/${id}`,
+    method: 'GET'
+});
+

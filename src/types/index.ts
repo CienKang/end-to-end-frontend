@@ -28,6 +28,7 @@ export interface UserData {
 export interface ContentType{
     typeName: string;
     fields: string[];
+    id: string;
 }
 
 export interface SideBarProps{
@@ -36,4 +37,16 @@ export interface SideBarProps{
     setContentTypeSelected: React.Dispatch<React.SetStateAction<ContentType>>;
     contentBuilderSelected: boolean;
     setContentBuilderSelected: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface ContentTypesViewerProps{
+    contentTypes: ContentType[];
+    contentTypeSelected2:ContentType;
+    setContentTypeSelected2: React.Dispatch<React.SetStateAction<ContentType>>;
+    singleContentTypeData: string[];
+    setSingleContentTypeData: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+export interface SingleContentTypeProps{
+    contentTypeSelected2:ContentType;
 }

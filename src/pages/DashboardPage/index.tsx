@@ -1,5 +1,6 @@
 import React, { useEffect ,useState} from 'react';
-import { SideBar } from '../../components';
+import { SideBar, SingleContentType } from '../../components';
+import ContentTypeViewer from '../../components/ContentTypesViewer';
 import { GET_ALL_CONTENT_TYPES } from '../../constants/apiEndpoints';
 import { ContentType } from '../../types';
 import { makeRequestToBackend } from '../../utils/makeRequest/makeRequest';
@@ -10,8 +11,17 @@ const DashboardPage = () => {
     const [contentTypes, setContentTypes] = useState<ContentType[]>([]);
     const [contentTypeSelected,setContentTypeSelected] = useState<ContentType>({
         typeName: '',
-        fields: []
+        fields: [],
+        id: ''
     });
+    const [contentTypeSelected2,setContentTypeSelected2] = useState<ContentType>({
+        typeName: '',
+        fields: [],
+        id: ''
+    });
+
+
+    const [singleContentTypeData, setSingleContentTypeData] = useState<string[]>([]);
 
     const [contentBuilderSelected, setContentBuilderSelected] = useState<boolean>(true);
 
@@ -23,7 +33,6 @@ const DashboardPage = () => {
         });
 
     }, []);
-
 
     return ( 
         <div className='dashboard-page'>
@@ -41,8 +50,18 @@ const DashboardPage = () => {
                     Content Types
                 </header>
                 <div className='main-split-screen'>
-                    <div className='first-split'></div>
-                    <div className='second-split'></div>
+                    <div className='first-split'>
+                        <ContentTypeViewer 
+                            contentTypes={contentTypes} 
+                            contentTypeSelected2={contentTypeSelected2}
+                            setContentTypeSelected2={setContentTypeSelected2}
+                            singleContentTypeData={singleContentTypeData}
+                            setSingleContentTypeData={setSingleContentTypeData}
+                        />
+                    </div>
+                    <div className='second-split'>
+                        <SingleContentType  contentTypeSelected2={contentTypeSelected2} />
+                    </div>
                 </div>
             </div>
         </div>

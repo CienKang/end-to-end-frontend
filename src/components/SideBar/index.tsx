@@ -9,6 +9,16 @@ const SideBar = (props: SideBarProps) => {
         props.setContentBuilderSelected(false);
     };
 
+    const handleContentTypeBuilderClick = () => {
+        props.setContentTypeSelected({
+            typeName: '',
+            fields: [],
+            id: ''
+        });
+        props.setContentBuilderSelected(true);
+    };
+
+
     return ( 
         <div className='side-bar'>
             <header>
@@ -34,7 +44,7 @@ const SideBar = (props: SideBarProps) => {
                         }
                     </ul>
                 </div>
-                <div className={`builder ${props.contentBuilderSelected && 'highlight'}`} >
+                <div className={`builder ${props.contentBuilderSelected && 'highlight'}`} onClick={handleContentTypeBuilderClick}>
                     <h3>CONTENT TYPE BUILDER</h3>
                 </div>
             </div>
