@@ -17,7 +17,7 @@ const LoginPage = () => {
     const handleLoginClick = () => {
         makeRequestToAuth({ ...LOGIN_USER }, { data: userData }).then(resp => {
             if (resp) {
-                localStorage.setItem('token', resp.token);
+                localStorage.setItem('jwtToken', resp.data);
                 navigate('/dashboard');
             }
         }

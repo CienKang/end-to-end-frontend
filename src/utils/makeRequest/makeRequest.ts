@@ -44,6 +44,10 @@ export const makeRequestToBackend = async (
             baseURL: BACKEND_URL,
             url: apiEndpoint.url,
             method: apiEndpoint.method,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('jwtToken')
+            },
             ...dynamicConfig
         };
 

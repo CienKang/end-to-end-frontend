@@ -23,4 +23,17 @@ export interface UserData {
     email: string;
     password: string;
 
-}.5;
+}
+
+export interface ContentType{
+    typeName: string;
+    fields: string[];
+}
+
+export interface SideBarProps{
+    contentTypes: ContentType[];
+    contentTypeSelected:ContentType;
+    setContentTypeSelected: React.Dispatch<React.SetStateAction<ContentType>>;
+    contentBuilderSelected: boolean;
+    setContentBuilderSelected: React.Dispatch<React.SetStateAction<boolean>>;
+}

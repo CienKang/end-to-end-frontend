@@ -15,3 +15,8 @@ export const VALIDATE_TOKEN = {
     url: 'token/validate',
     method: 'POST'
 };
+
+export const GET_ALL_CONTENT_TYPES = {
+    url: 'contentTypes',
+    method: 'GET'
+};
