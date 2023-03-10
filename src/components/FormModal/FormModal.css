@@ -1,0 +1,48 @@
+.form-modal {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.862);
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-modal-content {
+    background-color: white;
+    border: 2px solid #606163;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 80px;
+}
+
+.form-modal-body {
+    overflow-y: scroll;
+    height: 80%;
+}
+
+.form-combined-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.form-combined-input>input {
+    height: 55px;
+    border: 1px solid #AFBCFD;
+    background-color: #FCFCFC;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+
+.form-combined-btns>button {
+    height: 45px;
+    width: 140px;
+    font-size: x-large;
+}

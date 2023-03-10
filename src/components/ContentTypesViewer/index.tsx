@@ -33,7 +33,6 @@ const ContentTypeViewer = (props:ContentTypesViewerProps) => {
                 <h2>
                     {props.contentTypes.length} Types 
                 </h2> 
-                <img src='/assets/icon-search-dark@2x.png' alt='search' />
             </div>
             <div className='content-type-list'>
                 <span className='add-new-btn' onClick={handleAddNewContentType}>+ New Type</span>

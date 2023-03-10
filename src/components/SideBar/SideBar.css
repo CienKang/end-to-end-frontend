@@ -46,6 +46,7 @@
     color: #797979;
     font-size: 1.5rem;
     height: 100%;
+    overflow-y: scroll;
 }
 
 .builder{

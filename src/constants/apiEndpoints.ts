@@ -35,3 +35,24 @@ export const CREATE_NEW_FIELD_FOR_CONTENT_TYPE = (id:string) =>({
     url: `contentTypes/${id}`,
     method: 'PATCH'
 });
+
+
+export const REMOVE_FIELD_FROM_CONTENT_TYPE = (id:string) =>({
+    url: `contentTypes/${id}`,
+    method: 'DELETE'
+});
+
+export const RENAME_CONTENT_TYPE = (id:string) =>({
+    url: `contentTypes/${id}`,
+    method: 'POST'
+});
+
+export const CREATE_A_NEW_CONTENT = (id:string) =>({
+    url: `contentStorage/${id}`,
+    method: 'POST'
+});
+
+export const DELETE_A_CONTENT = (id:string) =>({
+    url: `contentStorage/${id}`,
+    method: 'DELETE'
+});

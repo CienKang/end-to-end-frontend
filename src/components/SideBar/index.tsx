@@ -1,11 +1,20 @@
-import React from 'react';
-import { ContentType, SideBarProps } from '../../types';
+import React  from 'react';
+import { GET_ALL_CONTENTS_FOR_CONTENT_TYPE } from '../../constants/apiEndpoints';
+import { backendType, ContentType, SideBarProps } from '../../types';
+import { makeRequestToBackend } from '../../utils/makeRequest/makeRequest';
 import './SideBar.css';
 
 const SideBar = (props: SideBarProps) => {
 
-    const handleListItemClick = (contentType:ContentType) => {
+    const handleListItemClick =  (contentType:ContentType) => {
+
         props.setContentTypeSelected(contentType);
+        makeRequestToBackend({...GET_ALL_CONTENTS_FOR_CONTENT_TYPE(contentType.id)}).then( (data) => {
+            data.forEach((content: backendType) => {
+                console.log(content.data);
+            });
+            props.setContentStorage(data);
+        });
         props.setContentBuilderSelected(false);
     };
 
@@ -35,7 +44,7 @@ const SideBar = (props: SideBarProps) => {
                             return (
                                 <span key={index} className={`${props.contentTypeSelected.typeName == contentType.typeName && 'highlight'}`}>
 
-                                    <div className='collection-item ' onClick={()=>handleListItemClick(contentType)}>
+                                    <div className='collection-item ' onClick={()=> handleListItemClick(contentType)}>
                                        ⏺ {contentType.typeName}
                                     </div>
                                 </span>
