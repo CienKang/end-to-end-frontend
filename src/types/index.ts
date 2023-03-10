@@ -45,8 +45,22 @@ export interface ContentTypesViewerProps{
     setContentTypeSelected2: React.Dispatch<React.SetStateAction<ContentType>>;
     singleContentTypeData: string[];
     setSingleContentTypeData: React.Dispatch<React.SetStateAction<string[]>>;
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+    showModal: boolean;
 }
 
 export interface SingleContentTypeProps{
     contentTypeSelected2:ContentType;
+    showModal: boolean;
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+    setModalFor: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface SingleModalProps{
+    showModal: boolean;
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+    setContentTypes: React.Dispatch<React.SetStateAction<ContentType[]>>;
+    modalFor:string;
+    contentTypeSelected2:ContentType;
+    setContentTypeSelected2: React.Dispatch<React.SetStateAction<ContentType>>;
 }

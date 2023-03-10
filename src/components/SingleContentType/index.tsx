@@ -2,7 +2,13 @@ import React from 'react';
 import { SingleContentTypeProps } from '../../types';
 import './SingleContentType.css';
 const SingleContentType = (props:SingleContentTypeProps) => {
-    console.log(props.contentTypeSelected2);
+
+    const handleNewFieldClick = () => {
+        props.setShowModal(!props.showModal);
+        props.setModalFor('Field');
+    };
+
+
     return ( 
         <div className='content-fields-container'>
             <div className='content-fields-header'>
@@ -13,14 +19,14 @@ const SingleContentType = (props:SingleContentTypeProps) => {
                 <p>{props.contentTypeSelected2.fields.length} fields</p>
             </div>
             <div className='content-fields-list'>
-                <span className='add-new-field-btn'>Add another field</span>
+                <span className='add-new-field-btn' onClick={handleNewFieldClick}>Add another field</span>
                 <div className='content-field-container'>
                     {
                         props.contentTypeSelected2.fields.map((content, index) => {
                             return(
                                 <div  key={index} className='content-field'>
                                     <div className='content-field-icon'>
-                        Ab
+                                        <p>Ab</p>
                                     </div>
                                     <div className='content-field-name'>
                                         <span>{content}</span>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { LoginBox } from '../../components';
 import { LOGIN_USER, REGISTER_USER } from '../../constants/apiEndpoints';
 import { UserData } from '../../types';

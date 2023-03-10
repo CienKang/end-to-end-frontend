@@ -1,5 +1,5 @@
 import React, { useEffect ,useState} from 'react';
-import { SideBar, SingleContentType } from '../../components';
+import { SideBar, SingleContentType, SingleModal } from '../../components';
 import ContentTypeViewer from '../../components/ContentTypesViewer';
 import { GET_ALL_CONTENT_TYPES } from '../../constants/apiEndpoints';
 import { ContentType } from '../../types';
@@ -20,6 +20,8 @@ const DashboardPage = () => {
         id: ''
     });
 
+    const [showModal, setShowModal] = useState<boolean>(false);
+    const [modalFor, setModalFor] = useState<string>('Content Type');
 
     const [singleContentTypeData, setSingleContentTypeData] = useState<string[]>([]);
 
@@ -57,13 +59,29 @@ const DashboardPage = () => {
                             setContentTypeSelected2={setContentTypeSelected2}
                             singleContentTypeData={singleContentTypeData}
                             setSingleContentTypeData={setSingleContentTypeData}
+                            setShowModal={setShowModal}
+                            showModal={showModal}
                         />
                     </div>
                     <div className='second-split'>
-                        <SingleContentType  contentTypeSelected2={contentTypeSelected2} />
+                        { contentTypeSelected2.typeName !== '' &&
+                            <SingleContentType  contentTypeSelected2={contentTypeSelected2} 
+                                showModal={showModal}
+                                setShowModal={setShowModal}
+                                setModalFor={setModalFor}
+                            />
+                        }
                     </div>
                 </div>
             </div>
+            {showModal && <SingleModal 
+                modalFor={modalFor}
+                setShowModal={setShowModal}
+                showModal={showModal}
+                contentTypeSelected2={contentTypeSelected2}
+                setContentTypes={setContentTypes}
+                setContentTypeSelected2={setContentTypeSelected2}
+            />}
         </div>
     );
 };

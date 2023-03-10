@@ -26,3 +26,12 @@ export const GET_ALL_CONTENTS_FOR_CONTENT_TYPE = (id:string) =>({
     method: 'GET'
 });
 
+export const CREATE_NEW_CONTENT_TYPE = {
+    url: 'contentTypes',
+    method: 'POST'
+};
+
+export const CREATE_NEW_FIELD_FOR_CONTENT_TYPE = (id:string) =>({
+    url: `contentTypes/${id}`,
+    method: 'PATCH'
+});

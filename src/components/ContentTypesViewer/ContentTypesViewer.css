@@ -24,8 +24,8 @@
     gap: 20px;
     color: #797979;
     font-size: 1.5rem;
-    height: 100%;
-    overflow:scroll;
+    height: 80vh;
+    overflow-y: scroll;
 }
 
 .add-new-btn{
