@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.login-page{
+.login-page {
     height: 100vh;
     width: 100vw;
     font-family: 'Montserrat', sans-serif;
@@ -9,7 +9,7 @@
 }
 
 
-.login-image{
+.login-image {
     background-color: #ECEFFF;
     width: 65vw;
     height: 100%;
@@ -19,25 +19,25 @@
     align-items: flex-start;
 }
 
-.login-image > h1{
+.login-image>h1 {
     color: #555656;
     font-size: 3rem;
     margin-left: 8%;
     margin-top: 8%;
 }
 
-.login-image-container{
+.login-image-container {
     width: 100%;
     height: 100%;
     display: flex;
 }
 
-.login-image-container > img {
+.login-image-container>img {
     width: 80%;
     height: 80%;
 }
 
-.login-box-container{
+.login-box-container {
     background-color: #272727;
     color: #ffffff;
     width: 35vw;
@@ -49,12 +49,12 @@
     gap: 120px;
 }
 
-@media  screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
 
-    
-.login-box-container > h1{
-    font-size: 2rem;
-    margin-left: 20px;
-}
+
+    .login-box-container>h1 {
+        font-size: 2rem;
+        margin-left: 20px;
+    }
 
 }

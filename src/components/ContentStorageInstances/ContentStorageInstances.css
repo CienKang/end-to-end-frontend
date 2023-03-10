@@ -1,15 +1,14 @@
-
-.main-split-screen-2{
+.main-split-screen-2 {
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
     width: 80vw;
     height: 92vh;
     background-color: #EBEEFE;
 }
 
-.main-body-header{
-    transform: translate(5%,20%);
+.main-body-header {
+    transform: translate(5%, 20%);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,13 +18,13 @@
     font-weight: 600;
 }
 
-.main-body-header>span{
+.main-body-header>span {
     margin-right: 40px;
     color: #0000CC;
     cursor: pointer;
 }
 
-.main-body{
+.main-body {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
@@ -33,10 +32,10 @@
     margin-left: 40px;
     margin-right: 40px;
     background-color: #EBEEFE;
-    overflow:auto;
+    overflow: auto;
 }
 
-.main-body-data{
+.main-body-data {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -46,41 +45,42 @@
     height: 100px;
 }
 
-.main-body-data-fields{
+.main-body-data-fields {
     width: 80%;
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
 
-.main-body-data-fields >p {
+.main-body-data-fields>p {
     justify-content: flex-start;
     font-size: 1.2rem;
-    width:200px;
+    width: 200px;
     color: #000000;
 }
 
-.main-body-data-id >p {
+.main-body-data-id>p {
     justify-content: flex-start;
     font-size: 1.2rem;
     color: #000000;
 }
 
-.main-body-data-actions  {
+.main-body-data-actions {
     justify-content: flex-start;
     font-size: 1.2rem;
     color: #000000;
     display: flex;
-    gap:14px
+    gap: 14px
 }
 
 
-.main-body-data-actions{
-    transform: translate(100%,0);
+.main-body-data-actions {
+    transform: translate(100%, 0);
     width: 20%;
 }
-.main-body .main-body-data:not(:nth-child(1)){
+
+.main-body .main-body-data:not(:nth-child(1)) {
     border-radius: 15px;
     background-color: #FFFFFF;
     margin-bottom: 10px;

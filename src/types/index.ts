@@ -25,14 +25,14 @@ export interface UserData {
 
 }
 
-export interface ContentType{
+export interface ContentType {
     typeName: string;
     fields: string[];
     id: string;
 }
 
 
-export interface backendType{
+export interface backendType {
     id: number;
     typeId: number;
     data: {
@@ -42,9 +42,9 @@ export interface backendType{
     updatedAt: string;
 }
 
-export interface SideBarProps{
+export interface SideBarProps {
     contentTypes: ContentType[];
-    contentTypeSelected:ContentType;
+    contentTypeSelected: ContentType;
     setContentTypeSelected: React.Dispatch<React.SetStateAction<ContentType>>;
     contentBuilderSelected: boolean;
     setContentBuilderSelected: React.Dispatch<React.SetStateAction<boolean>>;
@@ -52,9 +52,9 @@ export interface SideBarProps{
     setContentStorage: React.Dispatch<React.SetStateAction<backendType[]>>;
 }
 
-export interface ContentTypesViewerProps{
+export interface ContentTypesViewerProps {
     contentTypes: ContentType[];
-    contentTypeSelected2:ContentType;
+    contentTypeSelected2: ContentType;
     setContentTypeSelected2: React.Dispatch<React.SetStateAction<ContentType>>;
     singleContentTypeData: string[];
     setSingleContentTypeData: React.Dispatch<React.SetStateAction<string[]>>;
@@ -62,8 +62,8 @@ export interface ContentTypesViewerProps{
     showModal: boolean;
 }
 
-export interface SingleContentTypeProps{
-    contentTypeSelected2:ContentType;
+export interface SingleContentTypeProps {
+    contentTypeSelected2: ContentType;
     setContentTypeSelected2: React.Dispatch<React.SetStateAction<ContentType>>;
     showModal: boolean;
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -71,23 +71,23 @@ export interface SingleContentTypeProps{
 
 }
 
-export interface SingleModalProps{
+export interface SingleModalProps {
     showModal: boolean;
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
     setContentTypes: React.Dispatch<React.SetStateAction<ContentType[]>>;
-    modalFor:string;
-    contentTypeSelected2:ContentType;
+    modalFor: string;
+    contentTypeSelected2: ContentType;
     setContentTypeSelected2: React.Dispatch<React.SetStateAction<ContentType>>;
     contentTypes: ContentType[];
 }
 
-export interface ContentStorageInstancesProps{
+export interface ContentStorageInstancesProps {
     contentStorage: backendType[];
     setContentStorage: React.Dispatch<React.SetStateAction<backendType[]>>;
     setShowModalForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export interface FormModalProps{
+export interface FormModalProps {
     showModalForm: boolean;
     setShowModalForm: React.Dispatch<React.SetStateAction<boolean>>;
     contentTypeSelected: ContentType;

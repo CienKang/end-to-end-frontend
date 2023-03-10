@@ -3,7 +3,7 @@ import { REMOVE_FIELD_FROM_CONTENT_TYPE } from '../../constants/apiEndpoints';
 import { SingleContentTypeProps } from '../../types';
 import { makeRequestToBackend } from '../../utils/makeRequest/makeRequest';
 import './SingleContentType.css';
-const SingleContentType = (props:SingleContentTypeProps) => {
+const SingleContentType = (props: SingleContentTypeProps) => {
 
     const handleNewFieldClick = () => {
         props.setShowModal(!props.showModal);
@@ -12,7 +12,7 @@ const SingleContentType = (props:SingleContentTypeProps) => {
 
     const handleDeleteFieldClick = (index: number) => {
 
-        makeRequestToBackend({...REMOVE_FIELD_FROM_CONTENT_TYPE(props.contentTypeSelected2.typeName)},{data: {field: props.contentTypeSelected2.fields[index]}}).then(() => {
+        makeRequestToBackend({ ...REMOVE_FIELD_FROM_CONTENT_TYPE(props.contentTypeSelected2.typeName) }, { data: { field: props.contentTypeSelected2.fields[index] } }).then(() => {
             props.setContentTypeSelected2({
                 ...props.contentTypeSelected2,
                 fields: props.contentTypeSelected2.fields.filter((field, i) => i !== index)
@@ -26,7 +26,7 @@ const SingleContentType = (props:SingleContentTypeProps) => {
         props.setModalFor('Rename');
     };
 
-    return ( 
+    return (
         <div className='content-fields-container'>
             <div className='content-fields-header'>
                 <div className='content-fields-name'>
@@ -40,8 +40,8 @@ const SingleContentType = (props:SingleContentTypeProps) => {
                 <div className='content-field-container'>
                     {
                         props.contentTypeSelected2.fields.map((content, index) => {
-                            return(
-                                <div  key={index} className='content-field'>
+                            return (
+                                <div key={index} className='content-field'>
                                     <div className='content-field-icon'>
                                         <p>Ab</p>
                                     </div>
@@ -50,7 +50,7 @@ const SingleContentType = (props:SingleContentTypeProps) => {
                                         <span>Text</span>
                                         <div className='content-field-options'>
                                             <img src='/assets/user-edit-text-message-note@2x.png' />
-                                            <img src='/assets/trash-delete-recycle-bin-bucket-waste@2x.png' onClick={()=>handleDeleteFieldClick(index)} />
+                                            <img src='/assets/trash-delete-recycle-bin-bucket-waste@2x.png' onClick={() => handleDeleteFieldClick(index)} />
                                         </div>
                                     </div>
                                 </div>
@@ -62,8 +62,8 @@ const SingleContentType = (props:SingleContentTypeProps) => {
                 </div>
             </div>
         </div>
-        
+
     );
 };
- 
+
 export default SingleContentType;

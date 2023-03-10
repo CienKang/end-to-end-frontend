@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap:10px
+    gap: 10px
 }
 
 .content-fields-name {
@@ -19,17 +19,17 @@
     gap: 20px;
 }
 
-.content-fields-header > p {
+.content-fields-header>p {
     font-size: x-large;
     color: #606163;
 }
 
-.content-fields-list{
+.content-fields-list {
     display: flex;
     flex-direction: column;
 }
 
-.add-new-field-btn{
+.add-new-field-btn {
     background-color: #E9EAF1;
     cursor: pointer;
     color: #2100CE;
@@ -37,37 +37,37 @@
     padding: 1vh 0;
     border-radius: 15px;
     font-size: 2rem;
-    border:2px dotted #2100CE;
+    border: 2px dotted #2100CE;
     text-align: center;
 }
 
-.content-field-container{
+.content-field-container {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.content-field{
+.content-field {
     background-color: whitesmoke;
     display: flex;
     border-radius: 20px;
     height: 70px;
-    width:90%;
+    width: 90%;
 }
 
-.content-field-icon{
+.content-field-icon {
     display: flex;
     background-color: #7691FE;
     border-radius: 20px 0 0 20px;
-    width:10%;
+    width: 10%;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 2rem;
 }
 
-.content-field-name{
+.content-field-name {
     padding-left: 20px;
     width: 90%;
     display: flex;
@@ -78,11 +78,11 @@
     padding-right: 20px;
 }
 
-.content-field-name span:nth-child(1){
+.content-field-name span:nth-child(1) {
     width: 150px;
 }
 
-.content-field-options{
+.content-field-options {
     display: flex;
     gap: 20px;
     align-items: center;

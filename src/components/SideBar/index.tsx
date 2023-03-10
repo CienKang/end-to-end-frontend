@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { GET_ALL_CONTENTS_FOR_CONTENT_TYPE } from '../../constants/apiEndpoints';
 import { backendType, ContentType, SideBarProps } from '../../types';
 import { makeRequestToBackend } from '../../utils/makeRequest/makeRequest';
@@ -6,10 +6,10 @@ import './SideBar.css';
 
 const SideBar = (props: SideBarProps) => {
 
-    const handleListItemClick =  (contentType:ContentType) => {
+    const handleListItemClick = (contentType: ContentType) => {
 
         props.setContentTypeSelected(contentType);
-        makeRequestToBackend({...GET_ALL_CONTENTS_FOR_CONTENT_TYPE(contentType.id)}).then( (data) => {
+        makeRequestToBackend({ ...GET_ALL_CONTENTS_FOR_CONTENT_TYPE(contentType.id) }).then((data) => {
             data.forEach((content: backendType) => {
                 console.log(content.data);
             });
@@ -28,7 +28,7 @@ const SideBar = (props: SideBarProps) => {
     };
 
 
-    return ( 
+    return (
         <div className='side-bar'>
             <header>
                 CMS+
@@ -44,8 +44,8 @@ const SideBar = (props: SideBarProps) => {
                             return (
                                 <span key={index} className={`${props.contentTypeSelected.typeName == contentType.typeName && 'highlight'}`}>
 
-                                    <div className='collection-item ' onClick={()=> handleListItemClick(contentType)}>
-                                       ⏺ {contentType.typeName}
+                                    <div className='collection-item ' onClick={() => handleListItemClick(contentType)}>
+                                        ⏺ {contentType.typeName}
                                     </div>
                                 </span>
                             );
@@ -58,8 +58,8 @@ const SideBar = (props: SideBarProps) => {
                 </div>
             </div>
         </div>
-        
+
     );
 };
- 
+
 export default SideBar;

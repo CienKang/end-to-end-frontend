@@ -3,16 +3,16 @@ import { DELETE_A_CONTENT } from '../../constants/apiEndpoints';
 import { backendType, ContentStorageInstancesProps } from '../../types';
 import { makeRequestToBackend } from '../../utils/makeRequest/makeRequest';
 import './ContentStorageInstances.css';
-const ContentStorageInstances = (props:ContentStorageInstancesProps) => {
+const ContentStorageInstances = (props: ContentStorageInstancesProps) => {
 
     const handleNewEntryClick = () => {
         props.setShowModalForm(true);
     };
 
-    const handleDeleteEntryClick = (typeId:string,id:string) => {
-        makeRequestToBackend({...DELETE_A_CONTENT(typeId)},{data:{id:id}}).then(
-            ()=>{
-                props.setContentStorage(props.contentStorage.filter((content:backendType)=>content.id.toString() != id));
+    const handleDeleteEntryClick = (typeId: string, id: string) => {
+        makeRequestToBackend({ ...DELETE_A_CONTENT(typeId) }, { data: { id: id } }).then(
+            () => {
+                props.setContentStorage(props.contentStorage.filter((content: backendType) => content.id.toString() != id));
             }
         );
     };
@@ -34,15 +34,15 @@ const ContentStorageInstances = (props:ContentStorageInstancesProps) => {
                     <div className='main-body-data-fields'>
                         {
                             (props.contentStorage.length > 0) &&
-                            Object.keys(props.contentStorage[0].data).map((key,idx) => {
-                                if(idx < 3){
+                            Object.keys(props.contentStorage[0].data).map((key, idx) => {
+                                if (idx < 3) {
                                     return (
                                         <p key={idx}>{key}</p>
                                     );
                                 }
                             })
                         }
-                    
+
 
                         <div className='main-body-data-actions'>
                             <p>Actions</p>
@@ -50,7 +50,7 @@ const ContentStorageInstances = (props:ContentStorageInstancesProps) => {
                     </div>
                 </div>
                 {
-                    props.contentStorage.map((contentType:backendType,idx) => {
+                    props.contentStorage.map((contentType: backendType, idx) => {
                         return (
                             <div key={idx} className='main-body-data'>
                                 <div className='main-body-data-id'>
@@ -59,8 +59,8 @@ const ContentStorageInstances = (props:ContentStorageInstancesProps) => {
                                 <div className='main-body-data-fields'>
                                     {
 
-                                        Object.keys(contentType.data).map((key,idx) => {
-                                            if(idx < 3){
+                                        Object.keys(contentType.data).map((key, idx) => {
+                                            if (idx < 3) {
                                                 return (
                                                     <p key={idx}>{contentType.data[key]}</p>
                                                 );
@@ -70,17 +70,17 @@ const ContentStorageInstances = (props:ContentStorageInstancesProps) => {
                                     }
                                     <div className='main-body-data-actions'>
                                         <img src='/assets/user-edit-text-message-note@2x.png' onClick={handleEditEntryClick} />
-                                        <img src='/assets/trash-delete-recycle-bin-bucket-waste@2x.png' onClick={()=>handleDeleteEntryClick(contentType.typeId.toString(),contentType.id.toString())}  />
+                                        <img src='/assets/trash-delete-recycle-bin-bucket-waste@2x.png' onClick={() => handleDeleteEntryClick(contentType.typeId.toString(), contentType.id.toString())} />
                                     </div>
                                 </div>
                             </div>
                         );
                     })
                 }
-                
+
             </div>
         </div>
     );
 };
- 
+
 export default ContentStorageInstances;

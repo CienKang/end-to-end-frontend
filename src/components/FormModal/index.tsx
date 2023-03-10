@@ -4,10 +4,10 @@ import { FormModalProps } from '../../types';
 import { makeRequestToBackend } from '../../utils/makeRequest/makeRequest';
 import './FormModal.css';
 
-const FormModal = (props:FormModalProps) => {
-    const [formValues, setFormValues] = React.useState<{[key:string]:string}>({});
+const FormModal = (props: FormModalProps) => {
+    const [formValues, setFormValues] = React.useState<{ [key: string]: string }>({});
 
-    const handleInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormValues((prevState) => {
             return {
                 ...prevState,
@@ -20,17 +20,19 @@ const FormModal = (props:FormModalProps) => {
 
 
     const handleAddClick = () => {
-        makeRequestToBackend({...CREATE_A_NEW_CONTENT(props.contentTypeSelected.id)},{data: {
-            data:{
-                ...formValues
+        makeRequestToBackend({ ...CREATE_A_NEW_CONTENT(props.contentTypeSelected.id) }, {
+            data: {
+                data: {
+                    ...formValues
+                }
             }
-        }}).then(() => {
+        }).then(() => {
             props.setShowModalForm(false);
-            makeRequestToBackend({...GET_ALL_CONTENTS_FOR_CONTENT_TYPE(props.contentTypeSelected.id)}).then((response) => {
+            makeRequestToBackend({ ...GET_ALL_CONTENTS_FOR_CONTENT_TYPE(props.contentTypeSelected.id) }).then((response) => {
                 props.setContentStorage(response);
             });
         });
-        
+
     };
 
 
@@ -40,7 +42,7 @@ const FormModal = (props:FormModalProps) => {
 
 
 
-    return ( 
+    return (
         <div className='form-modal'>
             <div className='form-modal-content'>
                 <div className='form-modal-header'>
@@ -67,5 +69,5 @@ const FormModal = (props:FormModalProps) => {
         </div>
     );
 };
- 
+
 export default FormModal;

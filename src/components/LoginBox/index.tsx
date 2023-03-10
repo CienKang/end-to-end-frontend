@@ -20,9 +20,9 @@ const LoginBox = (props: LoginBoxProps) => {
                 <span> Password </span>
                 <input type='password' name='password' onChange={(e) => handleInputChange(e)} />
             </div>
-            <button onClick={props.handleLoginClick}>{ props.param === 'login' ? 'Login' : 'Register'}</button>
-            { props.param == 'register' &&  <a href='/login'>Have an account</a>}
-            { props.param == 'login' &&  <a href='/register'>Create an account</a>}
+            <button onClick={props.handleLoginClick}>{props.param === 'login' ? 'Login' : 'Register'}</button>
+            {props.param == 'register' && <a href='/login'>Have an account</a>}
+            {props.param == 'login' && <a href='/register'>Create an account</a>}
         </div>
     );
 };

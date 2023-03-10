@@ -1,11 +1,11 @@
-.side-bar{
+.side-bar {
     background-color: #272727;
     color: #ffffff;
     width: 20vw;
     height: 100vh;
 }
 
-.side-bar > header{
+.side-bar>header {
     background-color: #5805CF;
     font-size: 2.7rem;
     height: 8vh;
@@ -15,31 +15,31 @@
     padding-left: 1.6vw;
 }
 
-.side-bar-content{
+.side-bar-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
 
 }
 
-.colllection-header{
+.colllection-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top:13px;
+    margin-top: 13px;
     color: #B5B5B5;
 }
 
-.collection-item{
-    width:80vw;
+.collection-item {
+    width: 80vw;
     padding-left: 1.6vw;
 }
 
-.collection{
+.collection {
     height: 35vh;
 }
 
-.collection-list{
+.collection-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -49,13 +49,13 @@
     overflow-y: scroll;
 }
 
-.builder{
-    width:100%;
+.builder {
+    width: 100%;
     font-size: 0.87rem;
     padding-left: 1.6vw;
 }
 
-.highlight{
+.highlight {
     background-color: #000;
     color: #ffffff;
     padding-top: 6px;

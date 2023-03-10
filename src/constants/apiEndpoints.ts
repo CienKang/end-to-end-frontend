@@ -21,7 +21,7 @@ export const GET_ALL_CONTENT_TYPES = {
     method: 'GET'
 };
 
-export const GET_ALL_CONTENTS_FOR_CONTENT_TYPE = (id:string) =>({
+export const GET_ALL_CONTENTS_FOR_CONTENT_TYPE = (id: string) => ({
     url: `contentStorage/${id}`,
     method: 'GET'
 });
@@ -31,28 +31,28 @@ export const CREATE_NEW_CONTENT_TYPE = {
     method: 'POST'
 };
 
-export const CREATE_NEW_FIELD_FOR_CONTENT_TYPE = (id:string) =>({
+export const CREATE_NEW_FIELD_FOR_CONTENT_TYPE = (id: string) => ({
     url: `contentTypes/${id}`,
     method: 'PATCH'
 });
 
 
-export const REMOVE_FIELD_FROM_CONTENT_TYPE = (id:string) =>({
+export const REMOVE_FIELD_FROM_CONTENT_TYPE = (id: string) => ({
     url: `contentTypes/${id}`,
     method: 'DELETE'
 });
 
-export const RENAME_CONTENT_TYPE = (id:string) =>({
+export const RENAME_CONTENT_TYPE = (id: string) => ({
     url: `contentTypes/${id}`,
     method: 'POST'
 });
 
-export const CREATE_A_NEW_CONTENT = (id:string) =>({
+export const CREATE_A_NEW_CONTENT = (id: string) => ({
     url: `contentStorage/${id}`,
     method: 'POST'
 });
 
-export const DELETE_A_CONTENT = (id:string) =>({
+export const DELETE_A_CONTENT = (id: string) => ({
     url: `contentStorage/${id}`,
     method: 'DELETE'
 });

@@ -85,7 +85,7 @@ const DashboardPage = () => {
                 }
                 {
                     !contentBuilderSelected &&
-                    <ContentStorageInstances 
+                    <ContentStorageInstances
                         contentStorage={contentStorage}
                         setShowModalForm={setShowModalForm}
                         setContentStorage={setContentStorage}

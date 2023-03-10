@@ -37,11 +37,11 @@ const SingleModal = (props: SingleModalProps) => {
     };
 
     const handleCreateClickRename = () => {
-        makeRequestToBackend({...RENAME_CONTENT_TYPE(props.contentTypeSelected2.typeName)},{data: {newTypeName: input}}).then(() => {
+        makeRequestToBackend({ ...RENAME_CONTENT_TYPE(props.contentTypeSelected2.typeName) }, { data: { newTypeName: input } }).then(() => {
             props.setShowModal(!props.showModal);
-            
-            props.setContentTypes(props.contentTypes.map((contentType:ContentType) => {
-                if(contentType.typeName == props.contentTypeSelected2.typeName){
+
+            props.setContentTypes(props.contentTypes.map((contentType: ContentType) => {
+                if (contentType.typeName == props.contentTypeSelected2.typeName) {
                     return {
                         ...contentType,
                         typeName: input
@@ -50,25 +50,25 @@ const SingleModal = (props: SingleModalProps) => {
                 return contentType;
             }));
 
-            
+
             props.setContentTypeSelected2({
                 ...props.contentTypeSelected2,
                 typeName: input
             });
         });
-              
+
     };
     return (
         <div className='single-modal'>
             <div className='single-modal-content'>
                 <div className='single-modal-header'>
-                    { props.modalFor !='Rename' && <h3>Create a new {props.modalFor}</h3> }
-                    { props.modalFor =='Rename' && <h3>Rename {props.contentTypeSelected2.typeName}</h3> }
+                    {props.modalFor != 'Rename' && <h3>Create a new {props.modalFor}</h3>}
+                    {props.modalFor == 'Rename' && <h3>Rename {props.contentTypeSelected2.typeName}</h3>}
                 </div>
                 <div className='single-modal-body'>
                     <div className='combined-input'>
-                        {props.modalFor !='Rename' &&  <span>Name of {props.modalFor.toLowerCase()}</span>}
-                        {props.modalFor =='Rename' &&  <span>New name of {props.contentTypeSelected2.typeName}</span>}
+                        {props.modalFor != 'Rename' && <span>Name of {props.modalFor.toLowerCase()}</span>}
+                        {props.modalFor == 'Rename' && <span>New name of {props.contentTypeSelected2.typeName}</span>}
                         <input type='text' data-testid='input-single-modal' onChange={handleInputChange} />
                     </div>
 
