@@ -69,7 +69,7 @@ const SingleModal = (props: SingleModalProps) => {
                     <div className='combined-input'>
                         {props.modalFor !='Rename' &&  <span>Name of {props.modalFor.toLowerCase()}</span>}
                         {props.modalFor =='Rename' &&  <span>New name of {props.contentTypeSelected2.typeName}</span>}
-                        <input type='text' onChange={handleInputChange} />
+                        <input type='text' data-testid='input-single-modal' onChange={handleInputChange} />
                     </div>
 
                     <div className='combined-btns'>

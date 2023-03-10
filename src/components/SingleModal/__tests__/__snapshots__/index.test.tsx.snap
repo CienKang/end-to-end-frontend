@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleModal should match with previous snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="single-modal"
+  >
+    <div
+      class="single-modal-content"
+    >
+      <div
+        class="single-modal-header"
+      >
+        <h3>
+          Create a new Content Type
+        </h3>
+      </div>
+      <div
+        class="single-modal-body"
+      >
+        <div
+          class="combined-input"
+        >
+          <span>
+            Name of content type
+          </span>
+          <input
+            data-testid="input-single-modal"
+            type="text"
+          />
+        </div>
+        <div
+          class="combined-btns"
+        >
+          <span>
+            Cancel
+          </span>
+          <button>
+            Create
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
